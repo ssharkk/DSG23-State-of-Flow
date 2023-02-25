@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8051564044958538352}
   - component: {fileID: 8051564044958538351}
   - component: {fileID: 8051564044958538350}
-  m_Layer: 0
+  - component: {fileID: 1922440981}
+  m_Layer: 6
   m_Name: Waterblob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
+  m_Color: {r: 0.12893075, g: 1, b: 0.9595217, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -123,3 +124,24 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1922440981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051564044958538349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38525703a2ab10846beacbf7d50b078c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHorizontalVelocity: 2
+  moveRightSpeed: 400
+  startTemperature: 30
+  coolDownSpeed: 5
+  heatUpAmount: 10
+  coolDownAmount: 10
+  heatZoneSpeed: 50
+  coolZoneSpeed: 50
+  temp: 1

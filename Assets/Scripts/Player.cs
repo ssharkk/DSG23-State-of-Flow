@@ -30,6 +30,10 @@ public class Player : MonoBehaviour
     [SerializeField]
     float coolZoneSpeed = 10f;
 
+    public float yVelocityActivationThreshold = 1f;
+
+
+
     [Range(-20f, 120f)]
     float currentTemperature;
 
@@ -81,12 +85,18 @@ public class Player : MonoBehaviour
             NaturallyCoolDown();
         }
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if(rb.velocity.y > 0.01f || rb.velocity.y < -0.01f)
+        if(rb.velocity.y > 0.01f * yVelocityActivationThreshold || rb.velocity.y < -0.01f * yVelocityActivationThreshold)
         {
             isInAir = true;
-        }
-        if (isInAir)
+        } else
         {
+            isInAir = false;
+        }
+        Debug.Log(isInAir);
+        Debug.Log(rb.velocity.y);
+        if (!isInAir && rb.velocity.x < 1f)
+        {
+            Debug.Log(rb.velocity);
             TestMove(); //For test purpose, delete later.
         }
     }
@@ -148,17 +158,17 @@ public class Player : MonoBehaviour
         if (currentTemperature <= 0f)
         {
             currentState = States.SOLID;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
         else if (currentTemperature >= 100f)
         {
             currentState = States.GAS;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
         else
         {
             currentState = States.LIQUID;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
     }
 
