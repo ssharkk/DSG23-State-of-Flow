@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class PoolItem : MonoBehaviour
 {
-    PoolType type;
+    public PoolType type;
 
 
     public void DestroyToPool()
     {
-        this.gameObject.SetActive(false);
+        Debug.Log(type.sharedInstance);
         type.sharedInstance.AddToPool(this.gameObject);
+        this.gameObject.SetActive(false);
+        
     }
 }

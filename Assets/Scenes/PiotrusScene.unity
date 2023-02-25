@@ -123,6 +123,35 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9613388 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2515023607722974751, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
+  m_PrefabInstance: {fileID: 1800998996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9613391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9613388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c579f1fa9415468df205ff48591be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9613392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9613388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b154c0e04950d554c885e2e79aaab29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &31927169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -182,6 +211,10 @@ PrefabInstance:
       propertyPath: m_CellSize.y
       value: 6.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4746602500855427891, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
+      propertyPath: chunkPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 2361393037224335556, guid: b037d252a9b47734abd6b900f4c627af, type: 3}
     - target: {fileID: 4746602500855427894, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
       propertyPath: m_Name
       value: LevelPlacer
@@ -199,6 +232,7 @@ GameObject:
   - component: {fileID: 250505315}
   - component: {fileID: 250505314}
   - component: {fileID: 250505313}
+  - component: {fileID: 250505316}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -277,6 +311,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250505316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250505312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19241802dc7cd7547a9d4bfe8850aed7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.002
+  heightLerpTime: 100
 --- !u!1001 &1800998996
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -51,8 +51,13 @@ public class Player : MonoBehaviour
 
     States currentState;
 
+    PoolItem poolItem;
 
 
+
+    void Awake(){
+        poolItem = GetComponent<PoolItem>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -120,8 +125,9 @@ public class Player : MonoBehaviour
 
     internal void SetPlayerEnterDeathZone()
     {
+        poolItem.DestroyToPool();
         isAlive = false;
-        Debug.Log("Player died.");
+        
     }
 
     internal void SetPlayerOnWind(bool onWind, float windSpeed)
@@ -153,18 +159,25 @@ public class Player : MonoBehaviour
 
     private void StateChange()
     {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (currentTemperature <= 0f)
         {
             currentState = States.SOLID;
+            rb.gravityScale = 1.5f;
+            rb.mass = 4f;
             // Debug.Log(currentTemperature);
         }
         else if (currentTemperature >= 100f)
         {
+            rb.gravityScale = -0.5f;
+            rb.mass = 0.5f;
             currentState = States.GAS;
             // Debug.Log(currentTemperature);
         }
         else
         {
+            rb.gravityScale = 1f;
+            rb.mass = 1f;
             currentState = States.LIQUID;
             // Debug.Log(currentTemperature);
         }

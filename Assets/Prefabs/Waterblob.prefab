@@ -97,9 +97,10 @@ GameObject:
   - component: {fileID: 8051564044958538351}
   - component: {fileID: 8051564044958538350}
   - component: {fileID: 1922440981}
+  - component: {fileID: -5818049054991197988}
   m_Layer: 6
   m_Name: Waterblob
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,3 +231,16 @@ MonoBehaviour:
   heatZoneSpeed: 50
   coolZoneSpeed: 50
   yVelocityActivationThreshold: 1
+--- !u!114 &-5818049054991197988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051564044958538349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1476e0b37a2d14a4b94167a905744cbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: {fileID: 11400000, guid: e971091b5b0304142a97258cc840e3af, type: 2}
