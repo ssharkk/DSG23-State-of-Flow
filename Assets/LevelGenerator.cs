@@ -1,7 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using System.Linq;
 
 public class LevelGenerator : MonoBehaviour
 {
@@ -31,11 +31,27 @@ public class LevelGenerator : MonoBehaviour
     {
         
     }
-    
+    public static int GetNumberOfTiles(Tilemap tilemap)
+    {
+        tilemap.CompressBounds();
+        TileBase[] tiles = tilemap.GetTilesBlock(tilemap.cellBounds);
+        return tiles.Where(x => x != null).ToArray().Length;
+    }
+
+
+    Vector3Int GetInitPosition(Tilemap chunk){
+         foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
+            if (chunk.HasTile(position)){
+                return position;
+            }
+         }
+            return Vector3Int.zero;
+    }
     public Vector3Int GetStartPosition(Tilemap chunk){
-        Vector3Int smallest = chunk.cellBounds.allPositionsWithin.Current;
+        chunk.CompressBounds();
+        Vector3Int smallest = GetInitPosition(chunk);
         foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
-            if (position.x < smallest.x){
+            if (position.x < smallest.x && chunk.HasTile(position)){
                 smallest = position;
             }
         }
@@ -43,9 +59,10 @@ public class LevelGenerator : MonoBehaviour
     }
 
     public Vector3Int GetEndPosition(Tilemap chunk){
-         Vector3Int largest = chunk.cellBounds.allPositionsWithin.Current;
+        chunk.CompressBounds();
+        Vector3Int largest = GetInitPosition(chunk);
         foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
-            if (position.x > largest.x){
+            if (position.x > largest.x && chunk.HasTile(position)){
                 largest = position;
             }
         }
@@ -70,9 +87,9 @@ public class LevelGenerator : MonoBehaviour
         Vector3Int startPos = GetStartPosition(newChunk);
         Vector3 startPosWorld = currentChunk.GetCellCenterLocal(startPos);
 
-        Vector3 offset = new Vector3(endPosWorld.x - startPosWorld.x, endPosWorld.y - startPosWorld.y, endPosWorld.z - startPosWorld.z);
+        Vector3 offset = endPosWorld - startPosWorld;
         Vector3 original = newChunk.transform.position;
-        newChunk.transform.position = new Vector3(original.x + offset.x, original.y + offset.y, original.z + offset.z);
+        newChunk.transform.localPosition = original + offset;
         aliveChunks.Enqueue(newChunk);
 
     }
