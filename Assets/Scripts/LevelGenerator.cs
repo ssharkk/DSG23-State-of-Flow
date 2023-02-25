@@ -6,7 +6,8 @@ using System.Linq;
 public class LevelGenerator : MonoBehaviour
 {
     public Tilemap[] chunkPrefabs;
-    int index = 0;
+    public Tilemap startScreen;
+    int index = -1;
     Queue<Tilemap> aliveChunks;
 
     Tilemap currentChunk;
@@ -17,12 +18,11 @@ public class LevelGenerator : MonoBehaviour
     }
     void Start()
     {
-        GameObject current = Instantiate(chunkPrefabs[0].gameObject);
+        GameObject current = Instantiate(startScreen.gameObject);
         current.transform.SetParent(transform);
         currentChunk = current.GetComponent<Tilemap>();
         FixGameObjectPosition(currentChunk);
         currentChunk.gameObject.name = "First";
-        Debug.Log(FindPositionOfGameObject(currentChunk));
         aliveChunks.Enqueue(currentChunk);
         
         GenerateChunk();
