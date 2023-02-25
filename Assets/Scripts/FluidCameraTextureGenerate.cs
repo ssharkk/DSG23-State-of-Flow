@@ -7,6 +7,8 @@ public class FluidCameraTextureGenerate : MonoBehaviour
 {
     public RenderTexture rt;
     public RawImage target;
+    public Material material;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +18,13 @@ public class FluidCameraTextureGenerate : MonoBehaviour
         int resHeight = Screen.height;
         /*
                 rt = new RenderTexture(resWidth/6, resHeight/6, 24);*/
-        /*rt = new RenderTexture((int)(((float)resWidth) / ((float)resHeight) * 128f), 128, 24);
-*/
+        rt = new RenderTexture((int)(((float)resWidth) / ((float)resHeight) * 128f), 128, 24);
+
         rt.width = (int)(((float)resWidth) / ((float)resHeight) * 128f);
         rt.height = 128;
         camera.targetTexture = rt; //Create new renderTexture and assign to camera
         target.texture = rt;
+        material.SetTexture("_MainTex", rt);
     }
 
 }
