@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765753923647946441, guid: aac16b070dc457e4c888211337793e48, type: 3}
       propertyPath: m_Name
-      value: Tilemap
+      value: BasicNextLevel
       objectReference: {fileID: 0}
     - target: {fileID: 1765753923647946442, guid: aac16b070dc457e4c888211337793e48, type: 3}
       propertyPath: m_Tiles.Array.size
@@ -746,6 +746,10 @@ PrefabInstance:
     - target: {fileID: 1765753923647946443, guid: aac16b070dc457e4c888211337793e48, type: 3}
       propertyPath: m_ChunkCullingBounds.y
       value: 2.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 3785396878591565145, guid: aac16b070dc457e4c888211337793e48, type: 3}
+      propertyPath: spawnCount
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aac16b070dc457e4c888211337793e48, type: 3}
