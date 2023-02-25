@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     [Range(-20f, 120f)]
     float currentTemperature;
 
+    bool isInAir = true;
+
     private float moveUpSpeed = 3f;
 
     bool isAlive = true;
@@ -61,8 +63,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        TestMove(); //For test purpose, delete later.
-        
+
         if (isOnWind)
         {
             ApplyWindForceToPlayer();
@@ -78,6 +79,15 @@ public class Player : MonoBehaviour
         else
         {
             NaturallyCoolDown();
+        }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if(rb.velocity.y > 0.01f || rb.velocity.y < -0.01f)
+        {
+            isInAir = true;
+        }
+        if (isInAir)
+        {
+            TestMove(); //For test purpose, delete later.
         }
     }
 
@@ -126,11 +136,11 @@ public class Player : MonoBehaviour
     internal void HeatUp()
     {
         currentTemperature += heatUpAmount;
-        StateChange();
         if (currentTemperature > 120f)
         {
             currentTemperature = 120f;
         }
+        StateChange();
     }
 
     private void StateChange()
@@ -155,21 +165,23 @@ public class Player : MonoBehaviour
     internal void CoolDown()
     {
         currentTemperature -= coolDownAmount;
-        StateChange();
+        
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
         }
+        StateChange();
     }
 
     private void NaturallyCoolDown()
     {
         currentTemperature -= coolDownSpeed * Time.deltaTime;
-        StateChange();
+        
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
         }
+        StateChange();
     }
 
     internal void ChangeHeatZoneState(bool inZone)
