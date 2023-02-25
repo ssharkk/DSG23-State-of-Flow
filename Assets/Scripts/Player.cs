@@ -92,11 +92,9 @@ public class Player : MonoBehaviour
         {
             isInAir = false;
         }
-        Debug.Log(isInAir);
-        Debug.Log(rb.velocity.y);
+
         if (!isInAir && rb.velocity.x < 1f)
         {
-            Debug.Log(rb.velocity);
             TestMove(); //For test purpose, delete later.
         }
     }
