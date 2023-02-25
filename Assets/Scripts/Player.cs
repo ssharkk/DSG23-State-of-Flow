@@ -30,8 +30,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     float coolZoneSpeed = 10f;
 
+    public float yVelocityActivationThreshold = 1f;
+
+
+
     [Range(-20f, 120f)]
     float currentTemperature;
+
+    bool isInAir = true;
 
     private float moveUpSpeed = 3f;
 
@@ -61,8 +67,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        TestMove(); //For test purpose, delete later.
-        
+
         if (isOnWind)
         {
             ApplyWindForceToPlayer();
@@ -78,6 +83,21 @@ public class Player : MonoBehaviour
         else
         {
             NaturallyCoolDown();
+        }
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if(rb.velocity.y > 0.01f * yVelocityActivationThreshold || rb.velocity.y < -0.01f * yVelocityActivationThreshold)
+        {
+            isInAir = true;
+        } else
+        {
+            isInAir = false;
+        }
+        Debug.Log(isInAir);
+        Debug.Log(rb.velocity.y);
+        if (!isInAir && rb.velocity.x < 1f)
+        {
+            Debug.Log(rb.velocity);
+            TestMove(); //For test purpose, delete later.
         }
     }
 
@@ -126,11 +146,11 @@ public class Player : MonoBehaviour
     internal void HeatUp()
     {
         currentTemperature += heatUpAmount;
-        StateChange();
         if (currentTemperature > 120f)
         {
             currentTemperature = 120f;
         }
+        StateChange();
     }
 
     private void StateChange()
@@ -138,38 +158,40 @@ public class Player : MonoBehaviour
         if (currentTemperature <= 0f)
         {
             currentState = States.SOLID;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
         else if (currentTemperature >= 100f)
         {
             currentState = States.GAS;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
         else
         {
             currentState = States.LIQUID;
-            Debug.Log(currentTemperature);
+            // Debug.Log(currentTemperature);
         }
     }
 
     internal void CoolDown()
     {
         currentTemperature -= coolDownAmount;
-        StateChange();
+        
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
         }
+        StateChange();
     }
 
     private void NaturallyCoolDown()
     {
         currentTemperature -= coolDownSpeed * Time.deltaTime;
-        StateChange();
+        
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
         }
+        StateChange();
     }
 
     internal void ChangeHeatZoneState(bool inZone)
