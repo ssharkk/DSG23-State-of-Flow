@@ -58,4 +58,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkPrefabs:
-  - {fileID: 7721227769396927178, guid: eba1bcf5fd2bd6b4bac9f72c39a016af, type: 3}
+  - {fileID: 8814162314619262785, guid: cb8353ef5d2e66445b0a1ac6a29466b6, type: 3}
+  startScreen: {fileID: 1765753923647946442, guid: aac16b070dc457e4c888211337793e48, type: 3}
