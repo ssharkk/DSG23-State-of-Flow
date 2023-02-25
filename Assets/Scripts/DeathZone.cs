@@ -9,16 +9,7 @@ public class DeathZone : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             Player player = collision.gameObject.GetComponent<Player>();
-            player.SetPlayerEnterDeathZone(true);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Player player = collision.gameObject.GetComponent<Player>();
-            player.SetPlayerEnterDeathZone(false);
+            player.SetPlayerEnterDeathZone();
         }
     }
 }
