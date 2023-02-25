@@ -385,7 +385,9 @@ MonoBehaviour:
   - Master
   Banks:
   - Music
+  - Old Man Bruce
   - Player
+  - Vending_Machine
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

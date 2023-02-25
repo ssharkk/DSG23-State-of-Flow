@@ -1,24 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class StateSummariser : MonoBehaviour
 {
+
+    ParamRef prarameter;
     public int waitTime;
     public States majorityState = States.LIQUID;
+    private FMOD.Studio.EventInstance instance;
+
+    public FMODUnity.EventReference fmodEvent;
+    float stateMusic;
     // Start is called before the first frame update
     void Awake()
     {
-        
+        instance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        instance.start();
     }
 
     void Start(){
+
         StartCoroutine(RepeatedlySummariseState());
     }
 
     // Update is called once per frame
     void Update()
     {
+        switch(majorityState){
+            case States.LIQUID:
+                stateMusic = 0.9f;
+                break;
+            case States.SOLID:
+                stateMusic = 1.6f;
+                break;
+            default:
+                stateMusic = 2.4f;
+                break;
+        }
+        instance.setParameterByName("State", stateMusic);
     }
 
     IEnumerator RepeatedlySummariseState(){
