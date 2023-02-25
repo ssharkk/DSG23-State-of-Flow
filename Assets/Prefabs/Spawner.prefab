@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e9e6da1520aab4bb3ebc8484e89aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 1200
+  spawnCount: 500
   spawn_velocity: 3
   spawner_width: 0.32
   itemSpawner: {fileID: 11400000, guid: e971091b5b0304142a97258cc840e3af, type: 2}

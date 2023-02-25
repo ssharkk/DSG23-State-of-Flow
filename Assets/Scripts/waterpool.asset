@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sharedInstance: {fileID: 0}
   objectToPool: {fileID: 8051564044958538349, guid: 8dee8c81652b912459d7b22f20f1c55a, type: 3}
+  maxToSpawn: 500

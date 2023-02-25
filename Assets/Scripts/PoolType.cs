@@ -7,4 +7,5 @@ public class PoolType : ScriptableObject
 {
     public PoolManager sharedInstance;
     public GameObject objectToPool;
+    public int maxToSpawn;
 }

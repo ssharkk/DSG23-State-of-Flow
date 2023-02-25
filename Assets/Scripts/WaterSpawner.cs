@@ -5,10 +5,13 @@ using UnityEditor;
 
 public class WaterSpawner : MonoBehaviour
 {
-    public int spawnCount = 1000;
+    int spawnCount;
     public float spawn_velocity = 0f, spawner_width = 1f;
     public PoolType itemSpawner;
 
+    void Awake(){
+        spawnCount = itemSpawner.maxToSpawn;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
