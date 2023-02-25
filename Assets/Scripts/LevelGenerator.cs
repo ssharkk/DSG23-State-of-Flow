@@ -20,7 +20,9 @@ public class LevelGenerator : MonoBehaviour
         GameObject current = Instantiate(chunkPrefabs[0].gameObject);
         current.transform.SetParent(transform);
         currentChunk = current.GetComponent<Tilemap>();
+        FixGameObjectPosition(currentChunk);
         currentChunk.gameObject.name = "First";
+        Debug.Log(FindPositionOfGameObject(currentChunk));
         aliveChunks.Enqueue(currentChunk);
         
         GenerateChunk();
@@ -31,6 +33,27 @@ public class LevelGenerator : MonoBehaviour
     {
         
     }
+
+    Vector3Int FindPositionOfGameObject(Tilemap chunk){
+        foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
+            if (chunk.GetInstantiatedObject(position) != null){
+                return position;
+            }
+        }
+        return Vector3Int.zero;
+    }
+
+    void FixGameObjectPosition(Tilemap chunk){
+        foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
+            GameObject coolObject = chunk.GetInstantiatedObject(position);
+            if (coolObject != null){
+                Vector3 localPosition = chunk.GetCellCenterLocal(position);
+                coolObject.transform.localPosition = localPosition;
+            }
+            
+        }
+    }
+
     public static int GetNumberOfTiles(Tilemap tilemap)
     {
         tilemap.CompressBounds();
@@ -90,6 +113,7 @@ public class LevelGenerator : MonoBehaviour
         Vector3 offset = endPosWorld - startPosWorld;
         Vector3 original = newChunk.transform.position;
         newChunk.transform.localPosition = original + offset;
+        FixGameObjectPosition(newChunk);
         aliveChunks.Enqueue(newChunk);
 
     }
