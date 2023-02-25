@@ -153,18 +153,25 @@ public class Player : MonoBehaviour
 
     private void StateChange()
     {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (currentTemperature <= 0f)
         {
             currentState = States.SOLID;
+            rb.gravityScale = 1.5f;
+            rb.mass = 4f;
             // Debug.Log(currentTemperature);
         }
         else if (currentTemperature >= 100f)
         {
+            rb.gravityScale = -0.5f;
+            rb.mass = 0.5f;
             currentState = States.GAS;
             // Debug.Log(currentTemperature);
         }
         else
         {
+            rb.gravityScale = 1f;
+            rb.mass = 1f;
             currentState = States.LIQUID;
             // Debug.Log(currentTemperature);
         }
