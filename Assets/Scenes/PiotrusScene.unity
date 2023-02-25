@@ -301,4 +301,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkPrefabs:
-  - {fileID: 7721227769396927181, guid: eba1bcf5fd2bd6b4bac9f72c39a016af, type: 3}
+  - {fileID: 7721227769396927178, guid: eba1bcf5fd2bd6b4bac9f72c39a016af, type: 3}

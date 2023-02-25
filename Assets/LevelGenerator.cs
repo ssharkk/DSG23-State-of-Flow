@@ -7,20 +7,22 @@ public class LevelGenerator : MonoBehaviour
 {
     public Tilemap[] chunkPrefabs;
     int index = 0;
-    Queue<GameObject> aliveChunks;
+    Queue<Tilemap> aliveChunks;
 
     Tilemap currentChunk;
     // Start is called before the first frame update
 
     void Awake(){
-        aliveChunks = new Queue<GameObject>();
+        aliveChunks = new Queue<Tilemap>();
     }
     void Start()
     {
         GameObject current = Instantiate(chunkPrefabs[0].gameObject);
         current.transform.SetParent(transform);
-        aliveChunks.Enqueue(current);
         currentChunk = current.GetComponent<Tilemap>();
+        currentChunk.gameObject.name = "First";
+        aliveChunks.Enqueue(currentChunk);
+        
         GenerateChunk();
     }
 
@@ -57,32 +59,26 @@ public class LevelGenerator : MonoBehaviour
         //problem: gameobject doesn't move properly
         
         Vector3Int endPos = GetEndPosition(currentChunk);
-        endPos = new Vector3Int(endPos.x + 1, endPos.y, endPos.z);
+        endPos = new Vector3Int(endPos.x, endPos.y, endPos.z);
+        Vector3 endPosWorld = currentChunk.GetCellCenterLocal(endPos);
         
-        Tilemap newChunk = PickChunk();
-        Vector3Int newStart = GetStartPosition(newChunk);
-        Vector3Int offset = new Vector3Int (endPos.x - newStart.x, endPos.y - newStart.y, endPos.z - newStart.z);
-        Debug.Log(newChunk);
-        Debug.Log(offset);
-        MoveChunk(newChunk, offset);
-        var block = newChunk.GetTilesBlock(newChunk.cellBounds);
-        BoundsInt newBounds = currentChunk.cellBounds;
-        newBounds.size = newBounds.size + newChunk.cellBounds.size;
-        currentChunk.SetTilesBlock(newBounds, block);
+        Tilemap newChunkPrefab = PickChunk();
+        GameObject newObj = Instantiate(newChunkPrefab.gameObject);
+        newObj.transform.SetParent(transform);
 
+        Tilemap newChunk = newObj.GetComponent<Tilemap>();
+        Vector3Int startPos = GetStartPosition(newChunk);
+        Vector3 startPosWorld = currentChunk.GetCellCenterLocal(startPos);
+
+        Vector3 offset = new Vector3(endPosWorld.x - startPosWorld.x, endPosWorld.y - startPosWorld.y, endPosWorld.z - startPosWorld.z);
+        Vector3 original = newChunk.transform.position;
+        newChunk.transform.position = new Vector3(original.x + offset.x, original.y + offset.y, original.z + offset.z);
+        aliveChunks.Enqueue(newChunk);
 
     }
 
      public void MoveChunk(Tilemap chunk, Vector3Int offset){
-        foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
-            Tile tileToMove = chunk.GetTile<Tile>(position);
-            Debug.Log(tileToMove);
-            if (tileToMove != null){
-                Vector3Int newPosition = new Vector3Int(position.x + offset.x, position.y + offset.y, position.z + offset.z);
-                tileToMove.transform.MultiplyPoint(newPosition);
-            }
-            //
-        }
+       
     }
 
 
