@@ -32,6 +32,11 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
+    void KillChunk(){
+        Tilemap soonToDie = aliveChunks.Dequeue();
+        Destroy(soonToDie.gameObject);
+    }
+
     // Update is called once per frame
     void Update()
     {
