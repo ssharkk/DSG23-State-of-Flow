@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileData : MonoBehaviour
+public class LevelStorage : MonoBehaviour
 {
-    public Direction direction;
+    GameObject[] gameobjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,11 +12,8 @@ public class TileData : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Rotation(){
-
-    }
-
-    public void SetDirection(Direction newDirection){
-        direction = newDirection;
+    void Update()
+    {
+        
     }
 }
