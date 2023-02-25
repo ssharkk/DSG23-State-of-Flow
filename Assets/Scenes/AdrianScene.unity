@@ -649,9 +649,9 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 1
+      m_TileMatrixIndex: 0
       m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
+      m_TileObjectToInstantiateIndex: 0
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
   - first: {x: -3, y: 2, z: 0}
@@ -678,7 +678,7 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 6
+  - m_RefCount: 7
     m_Data:
       e00: 1
       e01: 0
@@ -696,7 +696,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 4
+  - m_RefCount: 3
     m_Data:
       e00: -1
       e01: -0.00000008742278
@@ -753,7 +753,9 @@ Tilemap:
   m_TileColorArray:
   - m_RefCount: 15
     m_Data: {r: 1, g: 1, b: 1, a: 1}
-  m_TileObjectToInstantiateArray: []
+  m_TileObjectToInstantiateArray:
+  - m_RefCount: 1
+    m_Data: {fileID: 1307166341502396705, guid: 3917787d59a334340b9b670a3cd1935d, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -4, y: -1, z: 0}
@@ -1271,7 +1273,7 @@ GameObject:
   - component: {fileID: 1850280112}
   - component: {fileID: 1850280111}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1291,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10e9e6da1520aab4bb3ebc8484e89aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnCount: 1000
+  spawnCount: 1200
+  spawn_velocity: 3
+  spawner_width: 0.32
   itemSpawner: {fileID: 11400000, guid: e971091b5b0304142a97258cc840e3af, type: 2}
 --- !u!4 &1850280112
 Transform:
@@ -1298,14 +1302,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850280110}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.32, y: 7.61, z: -0.1354433}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3348227, w: 0.9422812}
+  m_LocalPosition: {x: -4.62, y: 4.83, z: -0.1354433}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -39.124}
 --- !u!4 &1900047850 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8051564044958538353, guid: 8dee8c81652b912459d7b22f20f1c55a, type: 3}

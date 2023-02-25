@@ -23,7 +23,9 @@ public class PoolManager : MonoBehaviour
         {
             return pooledObjects.Pop();
         }
-        return Instantiate(type.objectToPool);
+        GameObject go = Instantiate(type.objectToPool);
+        go.transform.parent = gameObject.transform;
+        return go;
     }
     
     public void AddToPool(GameObject go)
