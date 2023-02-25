@@ -9,7 +9,9 @@ public class PoolItem : MonoBehaviour
 
     public void DestroyToPool()
     {
-        Debug.Log(type.sharedInstance);
+        if (!gameObject.activeSelf){
+            return;
+        }
         type.sharedInstance.AddToPool(this.gameObject);
         this.gameObject.SetActive(false);
         

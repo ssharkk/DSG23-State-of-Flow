@@ -17,7 +17,11 @@ public class Timer : MonoBehaviour
         time += Time.deltaTime;
     }
 
-    public float GetTime(){
-        return time;
+    public int GetTime(){
+        return (int) time;
+    }
+
+    public void ResetTime(){
+        time = 0;
     }
 }
