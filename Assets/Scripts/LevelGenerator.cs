@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.Events;
 using System.Linq;
 
 public class LevelGenerator : MonoBehaviour
@@ -12,20 +13,23 @@ public class LevelGenerator : MonoBehaviour
 
     Tilemap currentChunk;
     // Start is called before the first frame update
+    UnityEvent triggerNewChunk;
 
     void Awake(){
         aliveChunks = new Queue<Tilemap>();
+        triggerNewChunk = new UnityEvent();
+        triggerNewChunk.AddListener(GenerateChunk);
     }
     void Start()
     {
         GameObject current = Instantiate(startScreen.gameObject);
         current.transform.SetParent(transform);
         currentChunk = current.GetComponent<Tilemap>();
+        BuildTrigger(currentChunk);
         FixGameObjectPosition(currentChunk);
         currentChunk.gameObject.name = "First";
         aliveChunks.Enqueue(currentChunk);
-        
-        GenerateChunk();
+
     }
 
     // Update is called once per frame
@@ -37,10 +41,9 @@ public class LevelGenerator : MonoBehaviour
     void BuildTrigger(Tilemap chunk){
         BoxCollider2D trigger = chunk.gameObject.AddComponent<BoxCollider2D>();
         Vector3 size = chunk.CellToWorld(chunk.cellBounds.size);
-        trigger.size = size;
+        trigger.size = new Vector2(1, size.y);
         trigger.isTrigger = true;
-        
-
+        chunk.gameObject.AddComponent<TriggerBuild>().Init(triggerNewChunk);
 
     }
 
