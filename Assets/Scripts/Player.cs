@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
             return;
         }
         TestMove(); //For test purpose, delete later.
-        NaturallyCoolDown();
+        
         if (isOnWind)
         {
             ApplyWindForceToPlayer();
@@ -71,15 +71,27 @@ public class Player : MonoBehaviour
         {
             ApplyZoneTemperatureChange(heatZoneSpeed);
         }
-        if (inCoolZone)
+        else if (inCoolZone)
         {
             ApplyZoneTemperatureChange(-coolZoneSpeed);
+        }
+        else
+        {
+            NaturallyCoolDown();
         }
     }
 
     private void ApplyZoneTemperatureChange(float temperatureChange)
     {
         currentTemperature += temperatureChange * Time.deltaTime;
+        if(currentTemperature > 120f)
+        {
+            currentTemperature = 120f;
+        }else if(currentTemperature < -20f)
+        {
+            currentTemperature = -20f;
+        }
+        StateChange();
     }
 
     private void ApplyWindForceToPlayer()
@@ -114,35 +126,36 @@ public class Player : MonoBehaviour
     internal void HeatUp()
     {
         currentTemperature += heatUpAmount;
-        if (currentTemperature >= 100f)
-        {
-            currentState = States.GAS;
-            Debug.Log(currentState);
-        }
-        else if(currentTemperature < 100f && currentTemperature > 0f)
-        {
-            currentState = States.LIQUID;
-            Debug.Log(currentState);
-        }
+        StateChange();
         if (currentTemperature > 120f)
         {
             currentTemperature = 120f;
         }
     }
 
-    internal void CoolDown()
+    private void StateChange()
     {
-        currentTemperature -= coolDownAmount;
         if (currentTemperature <= 0f)
         {
             currentState = States.SOLID;
-            Debug.Log(currentState);
+            Debug.Log(currentTemperature);
         }
-        else if (currentTemperature < 100f && currentTemperature > 0f)
+        else if (currentTemperature >= 100f)
+        {
+            currentState = States.GAS;
+            Debug.Log(currentTemperature);
+        }
+        else
         {
             currentState = States.LIQUID;
-            Debug.Log(currentState);
+            Debug.Log(currentTemperature);
         }
+    }
+
+    internal void CoolDown()
+    {
+        currentTemperature -= coolDownAmount;
+        StateChange();
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
@@ -152,16 +165,7 @@ public class Player : MonoBehaviour
     private void NaturallyCoolDown()
     {
         currentTemperature -= coolDownSpeed * Time.deltaTime;
-        if(currentTemperature <= 0f)
-        {
-            currentState = States.SOLID;
-            Debug.Log(currentState);
-        }
-        else if (currentTemperature < 100f && currentTemperature > 0f)
-        {
-            currentState = States.LIQUID;
-            Debug.Log(currentState);
-        }
+        StateChange();
         if (currentTemperature < -20f)
         {
             currentTemperature = -20f;
