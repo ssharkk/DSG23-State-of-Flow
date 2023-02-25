@@ -51,8 +51,13 @@ public class Player : MonoBehaviour
 
     States currentState;
 
+    PoolItem poolItem;
 
 
+
+    void Awake(){
+        poolItem = GetComponent<PoolItem>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -120,8 +125,9 @@ public class Player : MonoBehaviour
 
     internal void SetPlayerEnterDeathZone()
     {
+        poolItem.DestroyToPool();
         isAlive = false;
-        Debug.Log("Player died.");
+        
     }
 
     internal void SetPlayerOnWind(bool onWind, float windSpeed)

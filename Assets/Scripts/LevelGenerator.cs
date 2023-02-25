@@ -118,11 +118,6 @@ public class LevelGenerator : MonoBehaviour
 
     }
 
-     public void MoveChunk(Tilemap chunk, Vector3Int offset){
-       
-    }
-
-
     Tilemap PickChunk(){
         int newIndex = Random.Range(0, chunkPrefabs.Length);
         while (newIndex == index && chunkPrefabs.Length > 1){

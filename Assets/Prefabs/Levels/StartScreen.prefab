@@ -451,11 +451,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.1
+      value: -21.7
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.07
+      value: 17.5
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -463,19 +463,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9422812
+      value: 0.9994502
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.3348227
+      value: -0.033155207
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -487,7 +487,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785396878917627868, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -39.124
+      value: -3.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7b0980590b975a40bb229b988e655e0, type: 3}
