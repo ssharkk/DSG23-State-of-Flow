@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2515023607722974744}
   - component: {fileID: 2515023607722974745}
+  - component: {fileID: 9613391}
+  - component: {fileID: 9613392}
   m_Layer: 0
   m_Name: Watergroup
   m_TagString: Untagged
@@ -53,6 +55,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: e971091b5b0304142a97258cc840e3af, type: 2}
+--- !u!114 &9613391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515023607722974751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1c579f1fa9415468df205ff48591be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9613392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515023607722974751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b154c0e04950d554c885e2e79aaab29c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2515023606377891093
 PrefabInstance:
   m_ObjectHideFlags: 0

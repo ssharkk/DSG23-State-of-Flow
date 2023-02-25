@@ -9,8 +9,10 @@ public class TemperatureButtons : MonoBehaviour
         Player[] allBulbs = FindObjectsOfType<Player>();
         foreach(Player bulb in allBulbs)
         {
+            
             bulb.HeatUp();
         }
+        Debug.Log("Heatin up");
     }
 
     public void CoolDown()
@@ -20,5 +22,6 @@ public class TemperatureButtons : MonoBehaviour
         {
             bulb.CoolDown();
         }
+        Debug.Log("Coolin down");
     }
 }
