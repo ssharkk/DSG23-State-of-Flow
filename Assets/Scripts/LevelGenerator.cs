@@ -34,6 +34,21 @@ public class LevelGenerator : MonoBehaviour
         
     }
 
+    void BuildTrigger(Tilemap chunk){
+        BoxCollider2D trigger = chunk.gameObject.AddComponent<BoxCollider2D>();
+        Vector3 size = chunk.CellToWorld(chunk.cellBounds.size);
+        trigger.size = size;
+        trigger.isTrigger = true;
+        
+
+
+    }
+
+    public Vector3 GetChunkMidPoint(Tilemap chunk){
+        chunk.CompressBounds();
+        return chunk.cellBounds.center;
+    }
+
     Vector3Int FindPositionOfGameObject(Tilemap chunk){
         foreach (Vector3Int position in chunk.cellBounds.allPositionsWithin){
             if (chunk.GetInstantiatedObject(position) != null){
