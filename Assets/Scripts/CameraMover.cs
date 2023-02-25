@@ -37,7 +37,6 @@ public class CameraMover : MonoBehaviour
         }
         return height / count;
     }
-
     float GetHeightOfFirstPlace(){
         float furthestForward = 0;
         float height = 0;
