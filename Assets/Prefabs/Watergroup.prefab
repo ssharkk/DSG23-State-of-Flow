@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: -3615915136689833659}
   - component: {fileID: 1671399284380147822}
   - component: {fileID: 6847614378210587080}
+  - component: {fileID: 8874527357132998490}
+  - component: {fileID: 539338215}
   m_Layer: 0
   m_Name: Watergroup
   m_TagString: Untagged
@@ -116,7 +118,7 @@ MonoBehaviour:
       Data2: 1232940287
       Data3: -521773123
       Data4: -314453984
-    Path: event:/Gas/ContinousGas
+    Path: event:/Gas/ContinousState
   <ContinousGas>k__BackingField:
     Guid:
       Data1: 799006410
@@ -161,29 +163,70 @@ MonoBehaviour:
     Path: event:/Liquid/LiquiHit
   <Vending_Machine>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 613289357
+      Data2: 1325998865
+      Data3: 1874674831
+      Data4: -1689913348
+    Path: event:/Vending machine/MachineMovement
   <Grunts>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 890502121
+      Data2: 1102805434
+      Data3: 2113885581
+      Data4: -8288978
+    Path: event:/Old man/Grunts
   <Laugh>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1970088043
+      Data2: 1196304101
+      Data3: 496311994
+      Data4: -1938809614
+    Path: event:/Old man/KarateHit1
   <Attacking>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1970088043
+      Data2: 1196304101
+      Data3: 496311994
+      Data4: -1938809614
+    Path: event:/Old man/KarateHit1
+--- !u!114 &8874527357132998490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515023607722974751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ec50837d9c4ff468dfd8197d637851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fmodEvent:
+    Guid:
+      Data1: -1485874268
+      Data2: 1311035989
+      Data3: -806912615
+      Data4: -68180108
+    Path: event:/Music/Musi
+--- !u!114 &539338215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2515023607722974751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bacccbadc702eb47b62e272538744b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitTime: 1
+  majorityState: 1
+  fmodEvent:
+    Guid:
+      Data1: 799006410
+      Data2: 1232940287
+      Data3: -521773123
+      Data4: -314453984
+    Path: event:/Gas/ContinousState
+  stateMusic: 0

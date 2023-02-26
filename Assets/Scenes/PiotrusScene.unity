@@ -174,18 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427889, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: m_CellSize.x
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427889, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: m_CellSize.y
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427891, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: chunkPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 2361393037224335556, guid: b037d252a9b47734abd6b900f4c627af, type: 3}
     - target: {fileID: 4746602500855427894, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
       propertyPath: m_Name
       value: LevelPlacer
@@ -350,32 +338,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &539338206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2515023607722974751, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-  m_PrefabInstance: {fileID: 1800998996}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &539338215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 539338206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bacccbadc702eb47b62e272538744b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waitTime: 2
-  majorityState: 1
-  fmodEvent:
-    Guid:
-      Data1: 799006410
-      Data2: 1232940287
-      Data3: -521773123
-      Data4: -314453984
-    Path: event:/Gas/ContinousState
 --- !u!1 &931827221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6252269461370778346, guid: bef93d0dfaef8654ab0e8c9e805003dd, type: 3}
@@ -637,106 +599,6 @@ PrefabInstance:
     - target: {fileID: 2515023607722974751, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
       propertyPath: m_Name
       value: Watergroup
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Laugh>k__BackingField.Path
-      value: event:/Old man/KarateHit1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Grunts>k__BackingField.Path
-      value: event:/Old man/Grunts
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Attacking>k__BackingField.Path
-      value: event:/Old man/KarateHit1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Laugh>k__BackingField.Guid.Data1
-      value: -1970088043
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Laugh>k__BackingField.Guid.Data2
-      value: 1196304101
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Laugh>k__BackingField.Guid.Data3
-      value: 496311994
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Laugh>k__BackingField.Guid.Data4
-      value: -1938809614
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Grunts>k__BackingField.Guid.Data1
-      value: 890502121
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Grunts>k__BackingField.Guid.Data2
-      value: 1102805434
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Grunts>k__BackingField.Guid.Data3
-      value: 2113885581
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Grunts>k__BackingField.Guid.Data4
-      value: -8288978
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <GasTransition>k__BackingField.Path
-      value: event:/Gas/ContinousState
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Attacking>k__BackingField.Guid.Data1
-      value: -1970088043
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Attacking>k__BackingField.Guid.Data2
-      value: 1196304101
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Attacking>k__BackingField.Guid.Data3
-      value: 496311994
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Attacking>k__BackingField.Guid.Data4
-      value: -1938809614
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Vending_Machine>k__BackingField.Path
-      value: event:/Vending machine/MachineMovement
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <GasTransition>k__BackingField.Guid.Data1
-      value: 799006410
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <GasTransition>k__BackingField.Guid.Data2
-      value: 1232940287
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <GasTransition>k__BackingField.Guid.Data3
-      value: -521773123
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <GasTransition>k__BackingField.Guid.Data4
-      value: -314453984
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Vending_Machine>k__BackingField.Guid.Data1
-      value: 613289357
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Vending_Machine>k__BackingField.Guid.Data2
-      value: 1325998865
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Vending_Machine>k__BackingField.Guid.Data3
-      value: 1874674831
-      objectReference: {fileID: 0}
-    - target: {fileID: 6847614378210587080, guid: 7181693c0391b1048ad81a9516434c78, type: 3}
-      propertyPath: <Vending_Machine>k__BackingField.Guid.Data4
-      value: -1689913348
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7181693c0391b1048ad81a9516434c78, type: 3}

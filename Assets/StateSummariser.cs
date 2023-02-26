@@ -6,12 +6,12 @@ public class StateSummariser : MonoBehaviour
 {
 
     ParamRef prarameter;
-    public int waitTime;
+    public float waitTime;
     public States majorityState = States.LIQUID;
     private FMOD.Studio.EventInstance instance;
 
     public FMODUnity.EventReference fmodEvent;
-    float stateMusic;
+    public float stateMusic;
     // Start is called before the first frame update
     void Awake()
     {
