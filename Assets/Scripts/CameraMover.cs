@@ -9,7 +9,7 @@ public class CameraMover : MonoBehaviour
     
     private Vector3 oldPos;
     private Camera cameraComponent;
-    float screenAspect, camHalfHeight, camHalfWidth;
+    public float screenAspect, camHalfHeight, camHalfWidth;
 
     private void Awake()
     {
