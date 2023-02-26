@@ -230,3 +230,4 @@ MonoBehaviour:
       Data4: -314453984
     Path: event:/Gas/ContinousState
   stateMusic: 0
+  waterMaterial: {fileID: 2100000, guid: 54b14b31c273f4c418a12ab07f1f9667, type: 2}
