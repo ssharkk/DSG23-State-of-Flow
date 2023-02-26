@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,10 +11,12 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     bool isCursorOnObject = false;
 
     Vector2 offset;
+    Mouse mouse;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        mouse = Mouse.current;
     }
 
     // Update is called once per frame
