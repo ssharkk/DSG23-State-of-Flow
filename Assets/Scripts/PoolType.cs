@@ -5,7 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "My Assets/Pool Type")]
 public class PoolType : ScriptableObject
 {
+    [HideInInspector]
     public PoolManager sharedInstance;
     public GameObject objectToPool;
-    public int maxToSpawn;
+    public int poolCountLimit;
+
+    [HideInInspector]
+    public int activeCount;
 }

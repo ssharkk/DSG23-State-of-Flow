@@ -5,27 +5,36 @@ using UnityEditor;
 
 public class WaterSpawner : MonoBehaviour
 {
-    int spawnCount;
-    public float spawn_velocity = 0f, spawner_width = 1f;
-    public PoolType itemSpawner;
+    public float spawn_velocity = 0f, spawner_width = 1f, spawn_frequency = 1;
+    public PoolType itemType;
+    private float time_elapsed = 0, spawn_delta;
 
-    void Awake(){
-        spawnCount = itemSpawner.maxToSpawn;
+    private void Awake()
+    {
+        spawn_delta = 1f / spawn_frequency;
+    }
+
+    void Update(){
+        spawn_delta = 1f / spawn_frequency;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        Color color = new Color(0.5f, 0.5f, 1.0f);
-        Debug.DrawLine(Vector3.zero, new Vector3(0, 5, 0), color);
-
-        if (spawnCount > 0)
+        /*        Debug.DrawLine(Vector3.zero, new Vector3(0, 5, 0), color);*/
+        /*        Debug.Log(spawnCount);*/
+        if (itemType.activeCount >= itemType.poolCountLimit)
         {
-            GameObject tmp = itemSpawner.sharedInstance.GetPooledObject();
+            return;
+        }
+        time_elapsed += Time.fixedDeltaTime;
+        while ((itemType.activeCount < itemType.poolCountLimit) && (time_elapsed > spawn_delta)) {
+            GameObject tmp = itemType.sharedInstance.GetPooledObject();
             tmp.gameObject.transform.position = transform.position + transform.right * Random.Range(-0.5f, 0.5f) * spawner_width;
+            tmp.SetActive(true);
             Rigidbody2D rb = tmp.gameObject.GetComponent<Rigidbody2D>();
             rb.velocity = transform.up * (-spawn_velocity);
-            spawnCount -= 1;
+            time_elapsed -= spawn_delta;
         }
     }
 }
