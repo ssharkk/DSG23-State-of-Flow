@@ -30,8 +30,8 @@ public class ScoreTracker : MonoBehaviour
 
     public void AddScore(float newScore){
         score += newScore;
-        Debug.Log(gainedScore);
-        gainedScore.text = "+ " + newScore.ToString() + "(Hit the middle of one screen)";
+        //Debug.Log(gainedScore);
+        //gainedScore.text = "+ " + newScore.ToString() + "(Hit the middle of one screen)";
         //gainedScore.color = Color.white;
         //StartCoroutine(FadeOut());
     }
