@@ -174,18 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427889, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: m_CellSize.x
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427889, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: m_CellSize.y
-      value: 6.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4746602500855427891, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
-      propertyPath: chunkPrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 2361393037224335556, guid: b037d252a9b47734abd6b900f4c627af, type: 3}
     - target: {fileID: 4746602500855427894, guid: 8b68f3eb5e4fa3742ab055d852df8b05, type: 3}
       propertyPath: m_Name
       value: LevelPlacer
@@ -350,6 +338,41 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &931827221 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6252269461370778346, guid: bef93d0dfaef8654ab0e8c9e805003dd, type: 3}
+  m_PrefabInstance: {fileID: 8908891638871724075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &931827226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931827221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 613289357
+      Data2: 1325998865
+      Data3: 1874674831
+      Data4: -1689913348
+    Path: event:/Vending machine/MachineMovement
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 0
+  OverrideMaxDistance: 0
 --- !u!224 &1220307468 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1545247427850222067, guid: b195a0b7b565a7b4f91d51d589b47f6b, type: 3}

@@ -12,7 +12,6 @@ public class TemperatureButtons : MonoBehaviour
             
             bulb.HeatUp();
         }
-        Debug.Log("Heatin up");
     }
 
     public void CoolDown()
@@ -22,6 +21,5 @@ public class TemperatureButtons : MonoBehaviour
         {
             bulb.CoolDown();
         }
-        Debug.Log("Coolin down");
     }
 }

@@ -41,7 +41,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4746602500855427894}
   m_Enabled: 1
-  m_CellSize: {x: 2.5, y: 2.5, z: 0}
+  m_CellSize: {x: 6.25, y: 6.25, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
@@ -58,5 +58,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chunkPrefabs:
-  - {fileID: 8814162314619262785, guid: cb8353ef5d2e66445b0a1ac6a29466b6, type: 3}
+  - {fileID: 2361393037224335556, guid: b037d252a9b47734abd6b900f4c627af, type: 3}
   startScreen: {fileID: 1765753923647946442, guid: aac16b070dc457e4c888211337793e48, type: 3}

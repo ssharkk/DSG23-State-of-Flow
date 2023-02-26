@@ -130,6 +130,9 @@ public class Player : MonoBehaviour
         
     }
 
+    public States GetStates(){
+        return currentState;
+    }
     internal void SetPlayerOnWind(bool onWind, float windSpeed)
     {
         isOnWind = onWind;

@@ -17,15 +17,15 @@ public class PlayerInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
+        
         Keyboard keyboard = Keyboard.current;
         Mouse mouse = Mouse.current;
-        if (keyboard.zKey.wasPressedThisFrame || mouse.leftButton.wasPressedThisFrame){
+        if (keyboard.zKey.wasPressedThisFrame){
             tempControl.CoolDown();
         }
-        if (keyboard.xKey.wasPressedThisFrame || mouse.rightButton.wasPressedThisFrame){
+        if (keyboard.xKey.wasPressedThisFrame ){
             tempControl.HeatUp();
         }
-        */
+        
     }
 }
