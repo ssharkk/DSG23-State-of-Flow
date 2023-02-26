@@ -38,7 +38,7 @@ public class WaterSpawner : MonoBehaviour
         }
     }
 }
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(WaterSpawner))]
 public class WaterSpawnerEditor : Editor
 {
@@ -52,3 +52,4 @@ public class WaterSpawnerEditor : Editor
         Handles.DrawDottedLine(position, position - tr.up * 1.5f, 1);
     }
 }
+#endif

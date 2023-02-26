@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4746602500855427888}
   - component: {fileID: 4746602500855427889}
   - component: {fileID: 4746602500855427891}
+  - component: {fileID: 1814435637}
   m_Layer: 0
   m_Name: LevelPlacer
   m_TagString: Untagged
@@ -59,4 +60,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunkPrefabs:
   - {fileID: 2361393037224335556, guid: b037d252a9b47734abd6b900f4c627af, type: 3}
+  - {fileID: 2361393037224335556, guid: eb35819478a79f445b1f0ac6d71d736f, type: 3}
+  - {fileID: 2361393037224335556, guid: d2c5304e9c04ddf45b5b41ace28c8a26, type: 3}
+  - {fileID: 2361393037224335556, guid: 9653b9481a85baf42af4b3cec75c00b9, type: 3}
   startScreen: {fileID: 1765753923647946442, guid: aac16b070dc457e4c888211337793e48, type: 3}
+--- !u!114 &1814435637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4746602500855427894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4edd85f9d86fc469579e4368fe1b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
