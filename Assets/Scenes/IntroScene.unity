@@ -415,7 +415,7 @@ MonoBehaviour:
     will never come. Fugetaboutit!\r\n\r\nUsing the internal vending machine temperature
     controls,\r\ntry to steer the drink to his waiting lips. Its like Bruce said,
     be like water, you put water in a vending machine, it becomes the vending machine...wait
-    did Bruce say that? \nDON WORRY ABOU' IT!\n\r\nYou may success, or may not?\n"
+    did Bruce say that? \nDON WORRY ABOU' IT!\n\r\nYou may succeed, or may not?\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -424,8 +424,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282712054
+  m_fontColor: {r: 0.96453494, g: 1, b: 0.2679245, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -719,8 +719,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757599950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0285, y: -11.6121, z: 0}
-  m_LocalScale: {x: 2.7929492, y: 5.225723, z: 1}
+  m_LocalPosition: {x: -0.0285, y: -10.8711, z: 0}
+  m_LocalScale: {x: 2.7929492, y: 4.993347, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 587611170}
@@ -774,8 +774,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
