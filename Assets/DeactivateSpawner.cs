@@ -24,12 +24,13 @@ public class DeactivateSpawner : MonoBehaviour
             time += Time.deltaTime;
             return;
         }
-        Debug.Log("camera" + cam);
-        Debug.Log("spawner" + spawner);
+        
+        if (spawner == null) return;
+        
         Vector3 viewPos = cam.WorldToViewportPoint(spawner.transform.position);
         if (viewPos.x >= 0 && viewPos.x <= 1 && viewPos.y >= 0 && viewPos.y <= 1 && viewPos.z > 0){
             
-        } else if (spawner != null) {
+        } else {
             spawner.SetActive(false);
             this.enabled = false;
         }
