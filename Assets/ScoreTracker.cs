@@ -18,7 +18,6 @@ public class ScoreTracker : MonoBehaviour
     {
         text = GetComponent<TMP_Text>();
         gainedScore = transform.GetChild(0).GetComponent<TMP_Text>();
-        Debug.Log(gainedScore);
         gainedScore.color = Color.clear;
     }
 
@@ -32,7 +31,7 @@ public class ScoreTracker : MonoBehaviour
     public void AddScore(float newScore){
         score += newScore;
         Debug.Log(gainedScore);
-        gainedScore.text = "+ (Hit the middle of one screen)";
+        gainedScore.text = "+ " + newScore.ToString() + "(Hit the middle of one screen)";
         //gainedScore.color = Color.white;
         //StartCoroutine(FadeOut());
     }
