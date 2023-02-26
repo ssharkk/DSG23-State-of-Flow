@@ -10,6 +10,7 @@ public class PoolManager : MonoBehaviour
     private void Awake()
     {
         type.sharedInstance = this;
+        type.activeCount = 0;
     }
 
     void Start()
@@ -19,6 +20,7 @@ public class PoolManager : MonoBehaviour
 
     public GameObject GetPooledObject()
     {
+        type.activeCount += 1;
         if (pooledObjects.Count > 0)
         {
             return pooledObjects.Pop();
@@ -30,6 +32,7 @@ public class PoolManager : MonoBehaviour
     
     public void AddToPool(GameObject go)
     {
+        type.activeCount -= 1;
         pooledObjects.Push(go);
     }
 
