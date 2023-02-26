@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -10,10 +11,13 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     bool isCursorOnObject = false;
 
     Vector2 offset;
+    Mouse mouse;
+    public float defaultGravity;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        mouse = Mouse.current;
     }
 
     // Update is called once per frame
@@ -21,7 +25,7 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (!isDragging)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetMouseButton(0))
             {
                 Debug.Log("Mouse down");
                 if(isCursorOnObject)
@@ -35,10 +39,10 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetMouseButtonUp(0))
             {
                 isDragging = false;
-                GetComponent<Rigidbody2D>().gravityScale = 1;
+                GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
             }
             else
             {
