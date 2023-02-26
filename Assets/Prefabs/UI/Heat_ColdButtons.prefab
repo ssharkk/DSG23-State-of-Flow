@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 6814483692655360233}
   - component: {fileID: 6814483692655360232}
   - component: {fileID: 6814483692655360231}
+  - component: {fileID: 1044718117795188658}
   m_Layer: 0
   m_Name: Heat Button
   m_TagString: Untagged
@@ -296,9 +297,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TemperatureButtons, Assembly-CSharp
-        m_MethodName: HeatUp
+      - m_Target: {fileID: 1044718117795188658}
+        m_TargetAssemblyTypeName: CallWatergroup, Assembly-CSharp
+        m_MethodName: PressHot
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -308,6 +309,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1044718117795188658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814483692655360229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3125235ea6a5e7141b91bb845b691008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6814483693127887444
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +469,7 @@ GameObject:
   - component: {fileID: 6814483693282885832}
   - component: {fileID: 6814483693282885831}
   - component: {fileID: 6814483693282885830}
+  - component: {fileID: 2873769323361350419}
   m_Layer: 0
   m_Name: Cool Button
   m_TagString: Untagged
@@ -566,9 +580,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TemperatureButtons, Assembly-CSharp
-        m_MethodName: CoolDown
+      - m_Target: {fileID: 2873769323361350419}
+        m_TargetAssemblyTypeName: CallWatergroup, Assembly-CSharp
+        m_MethodName: PressCold
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -578,3 +592,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2873769323361350419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6814483693282885828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3125235ea6a5e7141b91bb845b691008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -11,6 +11,9 @@ public class CameraMover : MonoBehaviour
     private Camera cameraComponent;
     public float screenAspect, camHalfHeight, camHalfWidth;
 
+    public float timeToStart;
+    float timer = 0f;
+
     private void Awake()
     {
         cameraComponent = GetComponent<Camera>();
@@ -23,9 +26,16 @@ public class CameraMover : MonoBehaviour
         players = GameObject.FindGameObjectsWithTag("Player");
     }
 
+    bool NotReadyToCull(){
+        return timer < timeToStart;
+    }
     // Update is called once per frame
     void LateUpdate()
     {
+        if (NotReadyToCull()){
+            timer += Time.deltaTime;
+        }
+
         oldPos = transform.position;
         players = GameObject.FindGameObjectsWithTag("Player");
 /*        float avgHeight = GetHeightOfFirstPlace();*/
@@ -41,7 +51,7 @@ public class CameraMover : MonoBehaviour
         foreach (GameObject player in players){
             float yPos = player.transform.position.y;
             if (player.activeSelf){  
-                if (yPos < oldPos.y - 5*camHalfHeight)
+                if (yPos < oldPos.y - 5*camHalfHeight && !NotReadyToCull())
                 {
                     player.GetComponent<PoolItem>().DestroyToPool();
                 } else
@@ -65,7 +75,7 @@ public class CameraMover : MonoBehaviour
             float xPos = player.transform.position.x;
             if (player.activeSelf)
             {
-                if (xPos < xLeft - 0.1*camHalfWidth || xPos > xLeft + 4 * camHalfWidth)
+                if ((xPos < xLeft - 0.1*camHalfWidth || xPos > xLeft + 4 * camHalfWidth) && !NotReadyToCull())
                 {
                     player.GetComponent<PoolItem>().DestroyToPool();
                 }
