@@ -12,6 +12,7 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     Vector2 offset;
     Mouse mouse;
+    public float defaultGravity;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         if (!isDragging)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Input.GetMouseButton(0))
             {
                 Debug.Log("Mouse down");
                 if(isCursorOnObject)
@@ -38,10 +39,10 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
         else
         {
-            if (Input.GetKeyUp(KeyCode.Mouse0))
+            if (Input.GetMouseButtonUp(0))
             {
                 isDragging = false;
-                GetComponent<Rigidbody2D>().gravityScale = 1;
+                GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
             }
             else
             {

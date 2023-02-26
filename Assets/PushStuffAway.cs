@@ -20,7 +20,6 @@ public class PushStuffAway : MonoBehaviour
     void OnTriggerStay2D(Collider2D c){
         Rigidbody2D rb = c.GetComponent<Rigidbody2D>();
         if (rb != null){
-            Debug.Log("PUSHING");
             rb.AddForce(transform.right * strength * Time.fixedDeltaTime);
         }
     }
