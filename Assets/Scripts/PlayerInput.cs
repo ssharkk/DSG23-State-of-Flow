@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PlayerInput : MonoBehaviour
 {
@@ -18,12 +17,10 @@ public class PlayerInput : MonoBehaviour
     void Update()
     {
         
-        Keyboard keyboard = Keyboard.current;
-        Mouse mouse = Mouse.current;
-        if (keyboard.zKey.wasPressedThisFrame){
+        if (Input.GetButton("Jump")){
             tempControl.CoolDown();
         }
-        if (keyboard.xKey.wasPressedThisFrame ){
+        if (Input.GetButton("Fire3")){
             tempControl.HeatUp();
         }
         

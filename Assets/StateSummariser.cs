@@ -44,7 +44,6 @@ public class StateSummariser : MonoBehaviour
     IEnumerator RepeatedlySummariseState(){
         while (true){
             SummariseState();
-            Debug.Log(majorityState);
             yield return new WaitForSeconds(waitTime);
         }
     }

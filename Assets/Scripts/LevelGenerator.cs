@@ -29,6 +29,9 @@ public class LevelGenerator : MonoBehaviour
         FixGameObjectPosition(currentChunk);
         currentChunk.gameObject.name = "First";
         aliveChunks.Enqueue(currentChunk);
+        GenerateChunk();
+        GenerateChunk();
+        GenerateChunk();
 
     }
 
@@ -122,22 +125,26 @@ public class LevelGenerator : MonoBehaviour
         //problem: gameobject doesn't move properly
         
         Vector3Int endPos = GetEndPosition(currentChunk);
-        endPos = new Vector3Int(endPos.x, endPos.y, endPos.z);
-        Vector3 endPosWorld = currentChunk.GetCellCenterLocal(endPos);
+        Vector3 endPosWorld = currentChunk.GetCellCenterWorld(endPos);
+        Debug.Log("EndPos for " +  gameObject.name + " At " + endPosWorld);
         
         Tilemap newChunkPrefab = PickChunk();
-        GameObject newObj = Instantiate(newChunkPrefab.gameObject);
+        GameObject newObj = Instantiate(newChunkPrefab.gameObject, currentChunk.transform.position, Quaternion.identity);
         newObj.transform.SetParent(transform);
 
         Tilemap newChunk = newObj.GetComponent<Tilemap>();
         Vector3Int startPos = GetStartPosition(newChunk);
-        Vector3 startPosWorld = currentChunk.GetCellCenterLocal(startPos);
+        Vector3 startPosWorld = currentChunk.GetCellCenterWorld(startPos);
+        Debug.Log("StartPos for " +  newObj.name + " At " + startPosWorld);
 
+        
         Vector3 offset = endPosWorld - startPosWorld;
-        Vector3 original = newChunk.transform.position;
-        newChunk.transform.localPosition = original + offset;
+        newObj.transform.position += offset;
+        Debug.Log(newObj.transform.position);
         FixGameObjectPosition(newChunk);
         aliveChunks.Enqueue(newChunk);
+        BuildTrigger(newChunk);
+        currentChunk = newChunk;
 
     }
 
