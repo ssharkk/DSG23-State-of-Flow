@@ -434,24 +434,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df54787aefda69e4f8ba400e2ccea39c, type: 3}
---- !u!1 &518092328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3314617580613325592, guid: 19881663cdf55c44e951437b348dbbf7, type: 3}
-  m_PrefabInstance: {fileID: 3314617581043295536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &518092334
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518092328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27ea25ce2c545764d8b11f70e1f1b04b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  defaultGravity: 0
 --- !u!1001 &1059143734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -962,10 +944,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 56296044583703490, guid: 19881663cdf55c44e951437b348dbbf7, type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3314617580613325592, guid: 19881663cdf55c44e951437b348dbbf7, type: 3}
       propertyPath: m_Name
       value: MoveableFan

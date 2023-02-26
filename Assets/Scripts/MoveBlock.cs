@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    bool isDragging = false;
+    public bool isDragging = false;
     bool isCursorOnObject = false;
 
     Vector2 offset;
@@ -60,5 +60,7 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         isCursorOnObject = false;
     }
+
+    
 
 }
