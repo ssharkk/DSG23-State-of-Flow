@@ -8,7 +8,6 @@ public class IntroSceneLoader : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-                Debug.Log("Load menu scene");
-        //SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Title");
     }
 }
