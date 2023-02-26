@@ -6,6 +6,7 @@ using System.Linq;
 
 public class LevelGenerator : MonoBehaviour
 {
+    public UnityEvent addScore;
     public Tilemap[] chunkPrefabs;
     public Tilemap startScreen;
     int index = -1;
@@ -29,10 +30,6 @@ public class LevelGenerator : MonoBehaviour
         FixGameObjectPosition(currentChunk);
         currentChunk.gameObject.name = "First";
         aliveChunks.Enqueue(currentChunk);
-        GenerateChunk();
-        GenerateChunk();
-        GenerateChunk();
-
     }
 
     void KillChunk(){
@@ -123,7 +120,7 @@ public class LevelGenerator : MonoBehaviour
         //go to pos before start, pos after end
         //pick chunk
         //problem: gameobject doesn't move properly
-        
+        addScore.Invoke();
         Vector3Int endPos = GetEndPosition(currentChunk);
         Vector3 endPosWorld = currentChunk.GetCellCenterWorld(endPos);
         Debug.Log("EndPos for " +  gameObject.name + " At " + endPosWorld);
