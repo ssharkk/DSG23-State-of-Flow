@@ -24,10 +24,8 @@ public class MoveBlock : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("Mouse down");
                 if(isCursorOnObject)
                 {
-                    Debug.Log("Selected");
                     isDragging = true;
                     offset = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
                     GetComponent<Rigidbody2D>().gravityScale = 0;

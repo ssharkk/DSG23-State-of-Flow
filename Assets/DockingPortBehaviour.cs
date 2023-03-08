@@ -35,7 +35,6 @@ public class DockingPortBehaviour : MonoBehaviour
 
     public void BuildFan(){
         if (isFanPresent){
-            Debug.Log("Building a fan");
             fanImage.color = Color.clear;
             button.interactable = false;
             isFanPresent = false;
@@ -45,7 +44,6 @@ public class DockingPortBehaviour : MonoBehaviour
             Vector3 spawnPoint = new Vector3(mousePos.x, mousePos.y, 0);
             GameObject newFan = Instantiate(fan, spawnPoint, Quaternion.identity);
             newFan.GetComponent<PushStuffAway>().SetDocker(this);
-            Debug.Log(newFan.transform.position);
 
         }
     }

@@ -29,6 +29,10 @@ public class StateSummariser : MonoBehaviour
         StartCoroutine(RepeatedlySummariseState());
     }
 
+    public void StopSounds(){
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
+    }
     // Update is called once per frame
     void Update()
     {

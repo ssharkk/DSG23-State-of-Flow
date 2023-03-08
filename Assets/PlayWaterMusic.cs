@@ -21,6 +21,11 @@ public class PlayWaterMusic : MonoBehaviour
         instance.start();
     }
 
+    public void StopMusic(){
+        instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        instance.release();
+    }
+
     // Update is called once per frame
     void Update()
     {
